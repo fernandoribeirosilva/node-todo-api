@@ -1,11 +1,11 @@
 import { Router } from "express";
-import * as ApiController from "../controller/apiControler";
+import * as TodoController from "../controller/todo.controller";
 
 const router = Router();
 
-router.get('/ping', ApiController.ping);
-router.get('/random', ApiController.random);
-router.get('/nome/:nome', ApiController.nome);
-
+router.get('/todo', TodoController.all);
+router.post('/todo', TodoController.add);
+router.put('/todo/:id', TodoController.update);
+router.delete('/todo/:id', TodoController.remove);
 
 export default router;
